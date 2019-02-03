@@ -68,8 +68,9 @@ type Config struct {
 	// Twister is the namespace with configuration options relating to
 	// the splitting of metric batches
 	Twister struct {
-		HandlerQueueLength int      `json:"handler.queue.length,string"`
-		QueryMetrics       []string `json:"query.metric.profiles"`
+		HandlerQueueLength   int      `json:"handler.queue.length,string"`
+		Metrics20TopicPrefix string   `json:"metrics20.topic.prefix`
+		QueryMetrics         []string `json:"query.metric.profiles"`
 	} `json:"twister"`
 	// Mistral is the namespace with configuration options relating to
 	// accepting incoming messages via HTTP API
