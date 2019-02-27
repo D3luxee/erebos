@@ -134,6 +134,14 @@ type Config struct {
 		// Frequency to print out debug metrics
 		MetricsFrequency int `json:"metrics.debug.frequency.seconds,string"`
 	} `json:"legacy"`
+	// Graphite is the namespace with the configuration options relating to
+	// the graphite metric endpoint
+	Graphite struct {
+		Host          string `json:"host"`
+		Port          string `json:"port"`
+		Prefix        string `json:"prefix"`
+		FlushInterval int64  `json:"flush.interval.seconds,string"`
+	} `json:"graphite"`
 	// ElasticSearch is the namespace with configuration options relating
 	// to ElasticSearch
 	ElasticSearch struct {
