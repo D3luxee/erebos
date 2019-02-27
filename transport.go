@@ -8,12 +8,17 @@
 
 package erebos // import "github.com/mjolnir42/erebos"
 
-import "time"
+import (
+	"time"
+
+	"github.com/d3luxee/schema"
+)
 
 // Transport is a small wrapper struct for byte values with a return
 // error channel and metadata
 type Transport struct {
-	HostID    int
+	HostID    int64
+	Metric    schema.MetricData
 	Value     []byte
 	Topic     string
 	Partition int32

@@ -35,6 +35,9 @@ type Config struct {
 		FH *reopen.FileWriter `json:"-"`
 		// Switch to enable debug logging
 		Debug bool `json:"debug,string"`
+		// Can be set to any level supported by logrus
+		// trace, debug, info, warning, error, fatal, panic
+		LogLevel string `json:"loglevel"`
 	} `json:"log"`
 	// Zookeeper is the namespace with options for Apache Zookeeper
 	Zookeeper struct {
