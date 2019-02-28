@@ -122,6 +122,8 @@ type Config struct {
 		Password     string `json:"password"`
 		DB           int    `json:"db.number,string"`
 		CacheTimeout uint64 `json:"cache.timeout.seconds,string"`
+		PoolSize     int    `json:"connection.pool.size,string"`
+		MinIdleConns int    `json:"min.idle.conns,string"`
 	} `json:"redis"`
 	// Legacy is the namespace with configuration options relating to
 	// legacy data formats
@@ -171,9 +173,10 @@ type Config struct {
 	// Eyewall is the namespace for configuration options relating to
 	// the eye lookup client library
 	Eyewall struct {
-		Host string `json:"host"`
-		Port string `json:"port"`
-		Path string `json:"path"`
+		Host           string `json:"host"`
+		Port           string `json:"port"`
+		Path           string `json:"path"`
+		ConnectionPool int    `json:"client.connection.pool,string"`
 		// number of allowed concurrent lookups to Eye per Eyewall
 		// instance, 0 for unlimited
 		ConcurrencyLimit uint32 `json:"eye.request.concurrency.limit,string"`
